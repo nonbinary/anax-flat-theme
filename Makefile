@@ -132,8 +132,8 @@ less: prepare-build
 # target: less-install       - Installing the stylesheet(s).
 less-install: less
 	@$(call HELPTEXT,$@)
-	if [ -d ../htdocs/css/ ]; then cp build/css/*.min.css ../htdocs/css/; fi
-	if [ -d ../htdocs/js/ ]; then rsync -a js/ ../htdocs/js/; fi
+	if [ -d ../htdocs/css/ ]; then cp build/css/*.min.css ../htdocs/css/; chown -R apache ../htdocs/css/; fi
+	if [ -d ../htdocs/js/ ]; then rsync -a js/ ../htdocs/js/; chown -R apache ../htdocs/js/; fi
 
 
 
@@ -167,3 +167,19 @@ npm-version:
 	@$(call CHECK_VERSION, $(CSSLINT))
 	@$(call CHECK_VERSION, $(STYLELINT))
 	@$(call CHECK_VERSION, $(LESSC), | cut -d ' ' -f 2)
+
+# target: upgrade-normalize       - Upgrade LESS module - Normalize.
+.PHONY: upgrade-normalize
+upgrade-normalize:
+	@$(call HELPTEXT,$@)
+	npm update normalize.css
+	cp node_modules/normalize.css/normalize.css modules/normalize.less
+
+# target: upgrade-responsive-menu - Upgrade LESS module - Responsive menu
+.PHONY: upgrade-responsive-menu
+upgrade-responsive-menu:
+	@$(call HELPTEXT,$@)
+	npm update desinax-responsive-menu
+	cp node_modules/desinax-responsive-menu/src/less/responsive-menu.less modules/
+	cp node_modules/desinax-responsive-menu/src/js/responsive-menu.js js/
+
