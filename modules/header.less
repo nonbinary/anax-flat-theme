@@ -2,20 +2,26 @@
  *  Header
  */
 
+@maxButtonFontSize: 2em;
+@menuItemBgColor: #A86C84;
+@menuItemSelectedBgColor: #A88493;
+@menuBgColor: #CE84A1;
+
+
 // Size of max navbar button
 .rm-max .rm-small .rm-button {
     font-size: 2em;
 }
 
-@maxButtonFontSize: 2em;
-
 // Style navbar
 .rm-desktop li {
-    background-color: #096;
+    background-color: #A96D85;
 }
 
-@navbarItemBgColor: #096;
-
+.inner-wrap-flash,
+.inner-wrap-header {
+    background-color: @menuBgColor;
+}
 
 // Size each item in the header
 .site-logo-text,
@@ -36,4 +42,33 @@
     a {
         text-decoration: none;
     }
+}
+
+/**---------------------------------------------------------------
+ * Sidebar
+ */
+
+.sidebar {
+    padding: 1em;
+}
+    
+.sidebar ul {
+    margin: 0;
+    padding: 0;
+}
+.sidebar li {
+    margin: 0.2em;
+    list-style: none;
+    padding: 1em;
+}
+.sidebar a {
+    color: black;
+    background-color: @menuItemBgColor;
+    text-decoration: none;
+    padding: 0.7em;
+}
+.sidebar .selected a,
+.sidebar a:hover {
+    text-decoration: underline;
+    background-color: @menuItemSelectedBgColor;
 }

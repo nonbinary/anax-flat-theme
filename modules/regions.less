@@ -1,9 +1,14 @@
 /**
  * Regions, basics to show off the regions.
  */
+body {
+    background: @bgColour;
+}
+
 .wrap-all {
     margin: 0 auto;
     max-width: 950px;
+    background: #eec;
 }
 
 .footer-column {
@@ -16,18 +21,23 @@
 }
 
 .sidebar {
-    width: 33%;
+    width: 17%;
     float: left;
+    background: @menuBgColor;
 }
 
 .main .has-sidebar {
-    width: 67%;
+    width: 83%;
     float: left;
+}
+
+.outer-wrap-main {
+    margin: 0;
+    padding: 0;
 }
 
 .outer-wrap-footer {
     clear: both;
-    margin-bottom: 22px;
 }
 
 .site-footer {
@@ -53,9 +63,17 @@
 }
 
 .next-previous {
+    background-color: @menuBgColor;
     .next,
     .previous {
         width: 50%;
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
     }
     
     .next {
@@ -64,8 +82,8 @@
     }
 }
 
-.breadcrumb {
-    margin-bottom: 22px;
+.breadcrumb-list {
+    background-color: @menuBgColor;
 
     ul {
         margin: 0;
@@ -74,10 +92,17 @@
     }
     
     li {
+        &+li:before {
+            content: " » ";
+        }
         display: inline;
 
-        &::after {
-            content: " » ";
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
         }
     }
 }
