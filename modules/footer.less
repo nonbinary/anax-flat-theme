@@ -1,6 +1,30 @@
+.site-footer {
+    text-align: center;
+    
+    ul {
+        margin: 0;
+        padding: 0;
+        list-type: none;
+    }
+
+    li {
+        display: inline;
+    }
+}
+
+.footer-column {
+    ul {
+        margin: 0;
+        padding: 1em;
+        list-style-type: circle;
+    }
+}
 
 .footer {
     background-color:   @footerBgColour;
-    padding: 0.5em;
     margin-bottom: 0;
+}
+
+.footer-column {
+    .column(4);
 }

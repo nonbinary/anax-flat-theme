@@ -1,0 +1,40 @@
+/**
+ * Regions, basics to show off the regions.
+ */
+
+body {
+    background: @bgColour;
+}
+
+.wrap-all {
+    .container();
+    max-width: 960px;
+    background: #eec;
+}
+
+.site-logo-text {
+    .column(3);
+}
+.navbar2 {
+    .column(6);
+}
+.profile {
+    .column(3);
+}
+
+.footer, .header, .flash-wrap, .breadcrumb-list {
+    .column(12);
+}
+
+.sidebar {
+    .column(3);
+    background: @menuBgColor;
+}
+
+.main {
+    .column(9);
+}
+
+.row {
+    .row()
+}

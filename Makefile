@@ -132,8 +132,8 @@ less: prepare-build
 # target: less-install       - Installing the stylesheet(s).
 less-install: less
 	@$(call HELPTEXT,$@)
-	if [ -d ../htdocs/css/ ]; then cp build/css/*.min.css ../htdocs/css/; chown -R apache ../htdocs/css/; fi
-	if [ -d ../htdocs/js/ ]; then rsync -a js/ ../htdocs/js/; chown -R apache ../htdocs/js/; fi
+	if [ -d ../htdocs/css/ ]; then cp build/css/*.min.css ../htdocs/css/; chown -R apache:panina ../htdocs/css/; fi
+	if [ -d ../htdocs/js/ ]; then rsync -a js/ ../htdocs/js/; chown -R apache:panina ../htdocs/js/; fi
 
 
 

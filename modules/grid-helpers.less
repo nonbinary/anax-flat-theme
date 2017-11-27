@@ -1,0 +1,29 @@
+/**
+ * Show grid.
+ */
+.showGrid(@maxWidth: 960px, @gridImage) {
+    background: url(@gridImage) repeat-y fixed center center;
+    background-size: 100% auto;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: @maxWidth;
+
+    @media (min-width: @maxWidth) {
+        background-size: @maxWidth auto;
+    }
+}
+html.vgrid header, html.vgrid .sidebar {
+    background-color: none;
+}
+.route-grid-ipsum01 .inner-wrap,
+.route-grid-ipsum01 .sidebar,
+.route-grid-ipsum02 .inner-wrap,
+.route-grid-ipsum02 .sidebar,
+.route-grid .inner-wrap,
+.route-grid .sidebar,
+html.vgrid .inner-wrap {
+    @gridImage: "/img/grid/grid960x12x60x20.png";
+    .showGrid(960px, @gridImage);
+}
+
+
